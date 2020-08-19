@@ -1,0 +1,12 @@
+﻿@model List<WebApplication2.Models.Users>
+
+@{
+    ViewBag.Title = "ViewUser";
+}
+
+<h2>View User</h2>
+<a href="Create">Create</a>
+@foreach (var x in Model)
+{
+    <li>@x.Id , @x.FirstName , @x.LastName <a href="EditUser\@x.Id">EditUser</a><a href="Delete\@x.Id">Delete User</a></li>
+}

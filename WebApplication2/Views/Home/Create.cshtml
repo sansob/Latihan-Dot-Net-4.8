@@ -1,0 +1,17 @@
+﻿@model WebApplication2.Models.Users
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+//home nama controller, create itu method post nya
+@using (Html.BeginForm("CreateUser", "Home", FormMethod.Post, new {id = "DialogForm"}))
+{
+    @Html.TextBoxFor(model => model.FirstName, new {id = "FirstName", placeholder = "First Name"})
+    @Html.TextBoxFor(model => model.LastName, new {id = "LastName", placeholder = "Last Name"})
+
+    <button onclick="Submit();return false;" class="k-button">Simpan</button>
+
+}

@@ -1,0 +1,17 @@
+﻿@model WebApplication2.Models.Users
+
+@{
+    ViewBag.Title = "EditUser";
+}
+
+<h2>EditUser</h2>
+
+
+@using (Html.BeginForm("UpdateUser", "Home", FormMethod.Post, new {id = "DialogForm"}))
+{
+    @Html.HiddenFor(model => model.Id, new {id = "Id"})
+    @Html.TextBoxFor(model => model.FirstName, new {id = "FirstName", placeholder = "First Name"})
+    @Html.TextBoxFor(model => model.LastName, new {id = "LastName", placeholder = "Last Name"})
+
+    <button onclick="Submit();return false;" class="k-button">Simpan</button>
+}
